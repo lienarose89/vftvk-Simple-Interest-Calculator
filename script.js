@@ -1,43 +1,25 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>Simple Interest Calculator</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="maindiv">
-            <h1>Simple Interest Calculator</h1>
+function compute()
+{
+    //Get form values
+    var principal = document.getElementById("principal").value;
+    var rate = document.getElementById("rate").value;
+    var years = document.getElementById("years").value;
 
-            <div class="form-class">
-                <label for="principal" class="custom-labels custom-label-amount">Amount</label> <input type="number" id="principal"> <br /><br />
-                
-                <label for="rate" class="custom-labels custom-label-interest">Interest Rate</label> <input class="range-class" type="range" id="rate" min="1" max="20" step="0.25" value="10.25" onchange="displayRange(this.value)">
-                <span id=spanVal>10.25%</span> <br /><br />
-                
-                
+    // Compute Interest Formula
+    var interest = parseFloat(principal * years * rate / 100);
 
-                <label for="years" class="custom-labels custom-label-years">No. of Years</label> 
-                <select id="years">
-                    <option value=1>1</option>
-                    <option value=2>2</option>
-                    <option value=3>3</option>
-                    <option value=4>4</option>
-                    <option value=5>5</option>
-                    <option value=6>6</option>
-                    <option value=7>7</option>
-                    <option value=8>8</option>
-                    <option value=9>9</option>
-                    <option value=10>10</option>
-                </select> <br /><br />
-            
-                
-                <button onclick="compute()">Compute Interest</button>
-                <br /><br />
-                <span id="result"></span>
-            </div>
-            <footer>&copy; Everyone Can Get Rich</footer>
-        </div>
-        
-    </body>
-</html> 
+    // Compute Actual Year
+    var actualyear = parseFloat(years) + 2021;
+
+    // Form Validation for Principal Value
+    if (principal <= 0) {
+        alert("Enter a positive number");
+        document.getElementById("principal").focus();
+    }
+    else {
+
+        // Display Results of Interest Calculation
+        var resultId = document.getElementById("result");
+        resultId.innerHTML = "<b>If you deposit <mark>" + principal + "</mark><br /> at an interest rate of <mark>" + rate + "%</mark> <br />" + "You will receive an amount of <mark>" + interest + "</mark>, <br> in the year <mark>" + actualyear + "</mark></b>";
+
+    }
