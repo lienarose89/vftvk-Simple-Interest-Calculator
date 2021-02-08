@@ -1,3 +1,11 @@
-body {background-color:black; font-family:Arial; color:white;}
-h1{color:grey; font-family: Verdana}
+body {background-color:black; font-family:Arial; color:white; font-size:14px;}
+h1{color:grey;font-size: 24px;}
 .maindiv{background-color:white; color:black; width: 300px; padding: 20px; border-radius:25px; margin:auto;}
+.custom-labels{font-weight:700;}
+.custom-label-amount{padding-right:49px;}
+.custom-label-interest{padding-right:10px;}
+.custom-label-years{padding-right:18px;}
+.form-class{padding:20px;}
+.range-class{width:95px;}
+footer{font-weight:700;}
+#principal{width:105px;}
